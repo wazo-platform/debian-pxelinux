@@ -1,0 +1,5 @@
+# D-I config version 1.0
+include pxelinux.cfg/menu.cfg
+default boot-screens/vesamenu.c32
+prompt 0
+timeout 0
