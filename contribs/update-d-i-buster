@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# BASEDIR="/var/lib/tftp/debian-installer-buster"
+BASEDIR="/tmp/pxe"
+
+for arch in amd64 i386; do
+    cd "$BASEDIR/$arch"
+    for file in initrd.gz linux pxelinux.0; do
+        wget -O "$file" "http://ftp.debian.org/debian/dists/buster/main/installer-$arch/current/images/netboot/debian-installer/$arch/$file"
+    done
+done
